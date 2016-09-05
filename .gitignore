@@ -1,0 +1,5 @@
+.vagrant/
+play.retry
+*.img.xz
+*.img
+*venv/
