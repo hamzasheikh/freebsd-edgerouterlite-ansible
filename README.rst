@@ -15,7 +15,11 @@ Install `Vagrant <https://www.vagrantup.com/>`_,
 `VirtualBox <https://www.virtualbox.org/>`_, and
 `Ansible <https://pypi.python.org/pypi/ansible>`_.
 
-Clone this repo. Optionally, edit *Vagrantfile* or *play.yml* to fit your
+Clone this repo (
+`GitLab <https://gitlab.com/aikchar/freebsd-edgerouterlite-ansible>`_,
+`GitHub <https://github.com/hamzasheikh/freebsd-edgerouterlite-ansible>`_,
+`BitBucket <https://bitbucket.org/aikchar/freebsd-edgerouterlite-ansible>`_
+). Optionally, edit *Vagrantfile* or *play.yml* to fit your
 requirements. Run Vagrant.
 
 ::
