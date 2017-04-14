@@ -5,12 +5,12 @@ Vagrant.configure(2) do |config|
 
   config.vm.provider 'virtualbox' do |v|
     v.memory = 4096
-    v.cpus = 2
+    v.cpus = 4
   end
 
-  config.vm.define 'freebsd11' do |fbsd|
+  config.vm.define 'freebsd12current' do |fbsd|
 
-    fbsd.vm.box = "freebsd/FreeBSD-11.0-RC2"
+    fbsd.vm.box = "freebsd/FreeBSD-12.0-CURRENT"
 
     fbsd.vm.box_check_update = true
 
@@ -28,7 +28,7 @@ Vagrant.configure(2) do |config|
 
     fbsd.vm.guest = :freebsd
 
-    fbsd.vm.hostname = "freebsd"
+    fbsd.vm.hostname = "freebsd12current"
 
     # With the line uncommented in Vagrant v 1.8.1,
     # ``vagrant up`` gives this error:

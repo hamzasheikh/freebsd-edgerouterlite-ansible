@@ -30,27 +30,27 @@ Once the machine is up and provisioned SSH into it.
 
 ::
 
-    user@host$ vagrant ssh freebsd11
+    user@host$ vagrant ssh freebsd12current
 
 Run ``buildimage.sh`` to create an image. On my machine it took about
 ??? minutes to complete a build.
 
 ::
 
-    vagrant@freebsd11$ sudo /bin/sh /home/vagrant/freebsd-ERL-build/buildimg.sh /home/vagrant/src /home/vagrant/erl-freebsd.img
+    vagrant@freebsd12current$ sudo /bin/sh /home/vagrant/freebsd-ERL-build/buildimg.sh /home/vagrant/src /home/vagrant/erl-freebsd.img
 
 Change file permissions.
 
 ::
 
-    vagrant@freebsd11$ sudo chown vagrant:vagrant /home/vagrant/erl-freebsd.img
+    vagrant@freebsd12current$ sudo chown vagrant:vagrant /home/vagrant/erl-freebsd.img
 
 Log out of the SSH session and copy the image to your machine.
 
 ::
 
-    vagrant@freebsd11$ exit
-    user@host$ vagrant scp freebsd11:/home/vagrant/erl-freebsd.img .
+    vagrant@freebsd12current$ exit
+    user@host$ vagrant scp freebsd12current:/home/vagrant/erl-freebsd.img .
 
 Write image to a USB thumb drive. Use the correct name of _your_ device in the
 ``of=`` part of the command.
@@ -67,9 +67,9 @@ repo and build a new image.
 
 ::
 
-    user@host$ vagrant ssh freebsd11
-    vagrant@freebsd11$ cd /home/vagrant/src
-    vagrant@freebsd11$ svnlite update
-    vagrant@freebsd11$ cd /home/vagrant
-    vagrant@freebsd11$ sudo rm -rf /home/vagrant/ERLBUILD.*
-    vagrant@freebsd11$ sudo /bin/sh /home/vagrant/freebsd-ERL-build/buildimg.sh /home/vagrant/src /home/vagrant/erl-freebsd.img
+    user@host$ vagrant ssh freebsd12current
+    vagrant@freebsd12current$ cd /home/vagrant/src
+    vagrant@freebsd12current$ svnlite update
+    vagrant@freebsd12current$ cd /home/vagrant
+    vagrant@freebsd12current$ sudo rm -rf /home/vagrant/ERLBUILD.*
+    vagrant@freebsd12current$ sudo /bin/sh /home/vagrant/freebsd-ERL-build/buildimg.sh /home/vagrant/src /home/vagrant/erl-freebsd.img
