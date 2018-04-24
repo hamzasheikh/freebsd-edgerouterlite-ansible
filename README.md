@@ -1,4 +1,4 @@
-# Build FreeBSD Image for Ubiquiti EdgeRouter Lite with Vagrant, Ansible, and freebsd-ERL-build
+# Build FreeBSD Image for Ubiquiti EdgeRouter Lite with Vagrant and freebsd-ERL-build
 
 This repo accompanies the blog post
 [FreeBSD on EdgeRouter Lite - no serial port required](http://www.daemonology.net/blog/2016-01-10-FreeBSD-EdgeRouter-Lite.html)
@@ -9,12 +9,13 @@ spin up a new Vagrant environment to run the script - written by Colin Percival 
 Install make, [Vagrant](https://www.vagrantup.com/) and
 [VirtualBox](https://www.virtualbox.org/).
 
-Clone this repo (
-[GitLab](https://gitlab.com/aikchar/freebsd-edgerouterlite-ansible),
+For simplicity, I have removed any steps that required Ansible.
+
+Clone this repo ([GitLab](https://gitlab.com/aikchar/freebsd-edgerouterlite-ansible),
 [GitHub](https://github.com/hamzasheikh/freebsd-edgerouterlite-ansible),
-[BitBucket](https://bitbucket.org/aikchar/freebsd-edgerouterlite-ansible)
-). Optionally, edit *Vagrantfile* to fit your
-requirements. Run Vagrant.
+[BitBucket](https://bitbucket.org/aikchar/freebsd-edgerouterlite-ansible)). 
+
+Optionally, edit *Vagrantfile* to fit your requirements.
 
 I'm using ``make`` to build the workflow. The included *Makefile* is pretty
 simple to read and hack.
@@ -42,3 +43,11 @@ Write image to a USB thumb drive. Use the correct name of _your_ device in the
 ``of=`` part of the command.
 
     $ sudo dd if=erl-freebsd.img of=/dev/rdisk596870 bs=1m && sync
+
+You can clean up some stuff in the Vagrant machine between builds.
+
+    $ make clean
+
+If you want to get rid of the Vagrant machine,
+
+    $ make destroy
