@@ -53,9 +53,7 @@ Vagrant.configure(2) do |config|
 
     fbsd.ssh.shell = "/bin/sh"
 
-    fbsd.vm.provision "ansible" do |ansible|
-      ansible.verbose = "v"
-      ansible.playbook = "play.yml"
-    end
+    fbsd.vm.provision "shell", path: "provision.sh"
+
   end
 end
